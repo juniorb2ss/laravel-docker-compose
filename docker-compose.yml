@@ -36,7 +36,7 @@ services:
 
   php:
     build:
-      context: ./docker/php-fpm7
+      context: ./docker/php7-fpm
     image: laravel:php-fpm
     container_name: php
     depends_on:
