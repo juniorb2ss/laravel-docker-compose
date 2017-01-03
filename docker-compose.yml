@@ -41,11 +41,7 @@ services:
     container_name: php
     depends_on:
       - redis
-      - mysql
-      - elasticsearch
-      - mailcatcher
-    entrypoint:
-      - php-fpm
+    command: bash -c "sh crontab-install.sh && php-fpm"
     environment:
       REDIS_HOST: 'redis'
       ELASTICSEARCH_HOST: 'elasticsearch'

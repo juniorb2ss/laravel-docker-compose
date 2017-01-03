@@ -27,6 +27,9 @@ RUN curl https://phar.phpunit.de/phpunit.phar -L > phpunit.phar \
   && mv phpunit.phar /usr/local/bin/phpunit \
   && phpunit --version
 
+# install cron
+RUN apt-get update && apt-get -y install rsyslog
+
 # Change uid and gid of apache to docker user uid/gid
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
